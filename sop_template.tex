@@ -1,0 +1,183 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.75in,right=0.75in,top=0.7in,bottom=1.5in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{bookman}
+\usepackage{helvet}
+\usepackage{avant}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand{\doctitle}{Process Name Standard Operating Procedure}
+\newcommand{\docnumber}{SOP-IT-0001}
+\newcommand{\reversion}{1.0}
+%\newcommand{\effectivedate}{\today}
+\newdateformat{usvardate}{\twodigit{\THEMONTH}/\twodigit{\THEDAY}/\THEYEAR}
+\newcommand{\effectivedate}{\usvardate\today}
+
+\newcommand{\headerbox}{%
+\vspace{0.0cm}
+\begin{tabular}{|p{0.5\textwidth}|p{0.4\textwidth}|}
+\hline
+\textbf{Document:} \doctitle & \textbf{Date:} \effectivedate \\
+\hline
+\textbf{Number:} \docnumber & \textbf{Revision:} \reversion \\
+\hline
+\end{tabular}
+\vspace{0.3cm}
+}
+
+\setlength{\headheight}{60pt}
+\setlength{\headsep}{30pt}
+\setlength{\footskip}{30pt}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\fontfamily{pag}\selectfont}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\fontfamily{pag}\selectfont}{\thesubsection}{1em}{}
+
+\begin{document}
+\fontfamily{pbk}\selectfont
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+{\Huge\bfseries \doctitle\par}
+\vspace{2cm}
+{\Large\bfseries Organization Name\par}
+\vspace{0.5cm}
+{\Large\bfseries Team/Department\par}
+\vspace{2cm}
+{\large Document Number: \docnumber\par}
+\vspace{1cm}
+{\large Revision: \reversion\par}
+\vspace{1cm}
+{\large Effective Date: \effectivedate\par}
+\end{center}
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\thispagestyle{empty}
+
+\clearpage
+\fancyhead[C]{\headerbox}
+\addcontentsline{toc}{section}{Document Revision History}
+\section*{Document Revision History}
+\begin{longtable}{|p{0.15\textwidth}|p{0.4\textwidth}|p{0.35\textwidth}|}
+\hline
+\textbf{Version} & \textbf{Author} & \textbf{Description of Changes} \\
+\hline
+1.0 & [Author Name] & Initial Release \\
+\hline
+\end{longtable}
+
+\vspace{2cm}
+
+\subsection*{Document Review and Approval}
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.15\textwidth}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+Author & & \\
+\hline
+Reviewer & & \\
+\hline
+Technical Reviewer & & \\
+\hline
+Quality Control & & \\
+\hline
+Manager & &  \\
+\hline
+\end{longtable}
+
+\fancyfoot[C]{\textbf{INTERNAL}}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+
+\clearpage
+\fancyhead[C]{\headerbox}
+\fancyfoot[C]{\textbf{INTERNAL}}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+
+\section{Purpose}
+[Purpose of the SOP]
+
+\section{Scope}
+[Scope of the SOP]
+
+\section{Responsibilities}
+[Define roles and responsibilities]
+
+\section{Definitions}
+[Define key terms]
+
+\section{Procedure}
+\subsection{General Guidelines}
+[General guidelines text]
+
+\subsection{Specific Steps}
+[Detailed procedure steps]
+
+\clearpage
+\section{References}
+\begin{longtable}{|p{0.3\textwidth}|p{0.6\textwidth}|}
+\hline
+\textbf{Document ID} & \textbf{Description} \\
+\hline
+Document 1 & Description of reference document 1 \\
+\hline
+Document 2 & Description of reference document 2 \\
+\hline
+Standard 1 & Description of relevant standard 1 \\
+\hline
+Policy 1 & Description of related policy 1 \\
+\hline
+\end{longtable}
+
+\clearpage
+\section{Acronyms}
+\begin{longtable}{|p{0.3\textwidth}|p{0.6\textwidth}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\
+\hline
+IT & Information Technology \\
+\hline
+SOP & Standard Operating Procedure \\
+\hline
+QA & Quality Assurance \\
+\hline
+SME & Subject Matter Expert \\
+\hline
+\end{longtable}
+
+\clearpage
+\appendix
+\section{Appendix A: Additional Resources}
+[Additional resources content]
+
+\clearpage
+\section{Appendix B: Additional Resources}
+[Additional resources content]
+
+\end{document}
