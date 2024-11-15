@@ -1,0 +1,194 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.75in,right=0.75in,top=0.7in,bottom=1.5in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{datetime}
+\usepackage{longtable}
+\usepackage{bookman}
+\usepackage{helvet}
+\usepackage{avant}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand{\doctitle}{Root Cause Analysis Report}
+\newcommand{\docnumber}{RCA-001}
+\newdateformat{usvardate}{\twodigit{\THEMONTH}/\twodigit{\THEDAY}/\THEYEAR}
+\newcommand{\effectivedate}{\usvardate\today}
+
+\newcommand{\headerbox}{%
+\vspace{0cm}
+\begin{tabular}{|p{0.5\textwidth}|p{0.4\textwidth}|}
+\hline
+\textbf{Document Name:} \doctitle & \textbf{Date:} \effectivedate \\
+\hline
+\textbf{Document Number:} \docnumber & \textbf{Ticket Number:} \reversion \\
+\hline
+\end{tabular}
+\vspace{0.3cm}
+}
+
+\setlength{\headheight}{60pt}
+\setlength{\headsep}{30pt}
+\setlength{\footskip}{30pt}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\fontfamily{pag}\selectfont}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\fontfamily{pag}\selectfont}{\thesubsection}{1em}{}
+
+\begin{document}
+\fontfamily{pbk}\selectfont
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+{\Huge\bfseries \doctitle\par}
+\vspace{2cm}
+{\Large\bfseries [Team Name]\par}
+\vspace{2cm}
+{\large Document Number: \docnumber\par}
+\vspace{1cm}
+{\large Date: \effectivedate\par}
+\vspace{2cm}
+{\large\bfseries Incident Title: [Enter Incident Title]\par}
+{\large\bfseries Ticket Number: [INC0000]\par}
+\end{center}
+\thispagestyle{empty}
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\thispagestyle{empty}
+
+\clearpage
+\fancyhead[C]{\headerbox}
+\fancyfoot[C]{\textbf{INTERNAL}}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+
+\section{Executive Summary}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Incident Date:} [Date of Incident]
+    \item \textbf{Incident Location:} [Location]
+    \item \textbf{Duration:} [Duration of Impact]
+    \item \textbf{Impact:} [Brief description of impact]
+    \item \textbf{Root Cause:} [Brief statement of root cause]
+    \item \textbf{Key Recommendations:} [Key actions to prevent recurrence]
+\end{itemize}
+
+\section{Incident Description}
+\subsection{Background}
+[Provide context and background information]
+
+\subsection{Timeline of Events}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Date/Time} & \textbf{Event Description} \\
+\hline
+[DateTime] & [Description] \\
+\hline
+[DateTime] & [Description] \\
+\hline
+\end{longtable}
+
+\section{Investigation Team}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.3\textwidth}|>{\raggedright\arraybackslash}p{0.3\textwidth}|>{\raggedright\arraybackslash}p{0.3\textwidth}|}
+\hline
+\textbf{Name} & \textbf{Role} & \textbf{Department} \\
+\hline
+[Name] & [Role] & [Department] \\
+\hline
+\end{longtable}
+
+\section{Analysis Methods Used}
+\begin{itemize}[leftmargin=1.5cm]
+    \item List analysis methods used (e.g., 5 Whys, Fishbone Diagram, etc.)
+\end{itemize}
+
+\section{Root Cause Analysis}
+\subsection{Direct Cause}
+[Immediate cause of the incident]
+
+\subsection{Contributing Factors}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Factor 1
+    \item Factor 2
+\end{itemize}
+
+\subsection{Root Cause(s)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Primary Root Cause:} [Description]
+    \item \textbf{Secondary Root Causes:}
+    \begin{itemize}[leftmargin=1cm]
+        \item Description
+    \end{itemize}
+\end{itemize}
+
+\section{Impact Analysis}
+\subsection{Business Impact}
+[Description of business impact]
+
+\subsection{Customer Impact}
+[Description of customer impact]
+
+\subsection{Financial Impact}
+[Description of financial impact]
+
+\section{Corrective Actions}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.3\textwidth}|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.2\textwidth}|}
+\hline
+\textbf{Action Item} & \textbf{Description} & \textbf{Owner} & \textbf{Due Date} \\
+\hline
+[Action 1] & [Description] & [Owner] & [Date] \\
+\hline
+\end{longtable}
+
+\section{Preventive Actions}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.3\textwidth}|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.2\textwidth}|}
+\hline
+\textbf{Action Item} & \textbf{Description} & \textbf{Owner} & \textbf{Due Date} \\
+\hline
+[Action 1] & [Description] & [Owner] & [Date] \\
+\hline
+\end{longtable}
+
+\section{Lessons Learned}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Key lesson 1
+    \item Key lesson 2
+\end{itemize}
+
+\clearpage
+\section{References}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.3\textwidth}|>{\raggedright\arraybackslash}p{0.6\textwidth}|}
+\hline
+\textbf{Document ID} & \textbf{Description} \\
+\hline
+[Doc ID] & [Description] \\
+\hline
+\end{longtable}
+
+\clearpage
+
+\appendix
+\section{Appendix A: Supporting Data}
+[Supporting data, charts, graphs]
+
+\section{Appendix B: Analysis Details}
+[Detailed analysis information]
+
+\section{Appendix C: Communication Plan}
+[Communication plan details]
+
+\end{document}
